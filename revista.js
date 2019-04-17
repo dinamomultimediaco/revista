@@ -153,6 +153,23 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 	}
 
 
+(lib.an_Video = function(options) {
+	this._element = new $.an.Video(options);
+	this._el = this._element.create();
+	var $this = this;
+	this.addEventListener('added', function() {
+		$this._lastAddedFrame = $this.parent.currentFrame;
+		$this._element.attach($('#dom_overlay_container'));
+	});
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(0,0,400,300);
+
+p._tick = _tick;
+p._handleDrawEnd = _handleDrawEnd;
+p._updateVisibility = _updateVisibility;
+
+
+
 (lib.volver2 = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
@@ -4721,42 +4738,6 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,22.2,14.6);
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_1},{t:this.shape},{t:this.text}]}).wait(1));
 
 }).prototype = getMCSymbolPrototype(lib.animacion, new cjs.Rectangle(-3.7,-3.7,123.6,82.4), null);
-
-
-(lib.videojhon = function(mode,startPosition,loop) {
-	this.initialize(mode,startPosition,loop,{});
-
-	// Capa_1
-	this.instance = new lib.my_youtube({'id': '', 'src':'https://www.youtube.com/embed/gu2ncBJX95k', 'alt':'youtube video', 'frameborder':'0', 'allowfullscreen':'allowfullscreen', 'visible':true, 'class':'ui-youtube'});
-
-	this.instance.setTransform(211,137.3,4.058,2.642,0,0,0,50.1,50.1);
-
-	this.shape = new cjs.Shape();
-	this.shape.graphics.f("rgba(255,255,255,0.847)").s().p("EggwAVVMAAAgqqMBBhAAAMAAAAqqg");
-	this.shape.setTransform(209.7,136.6);
-
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape},{t:this.instance}]}).wait(1));
-
-}).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(0,0,419.5,273.1);
-
-
-(lib.videojane = function(mode,startPosition,loop) {
-	this.initialize(mode,startPosition,loop,{});
-
-	// Capa_1
-	this.instance = new lib.my_youtube({'id': '', 'src':'https://www.youtube.com/embed/AiC1ShqmFQk', 'alt':'youtube video', 'frameborder':'0', 'allowfullscreen':'allowfullscreen', 'visible':true, 'class':'ui-youtube'});
-
-	this.instance.setTransform(169.8,127.3,3.26,2.339,0,0,0,50.3,50.1);
-
-	this.shape = new cjs.Shape();
-	this.shape.graphics.f("rgba(255,255,255,0.847)").s().p("A6fTwMAAAgnfMA0/AAAMAAAAnfg");
-	this.shape.setTransform(169.6,126.4);
-
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape},{t:this.instance}]}).wait(1));
-
-}).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(0,0,339.2,252.8);
 
 
 (lib.tecnologia = function(mode,startPosition,loop) {
@@ -22344,28 +22325,28 @@ p.nominalBounds = new cjs.Rectangle(-199.4,-160.3,476.2,292);
 	this.timeline.addTween(cjs.Tween.get(this.text_7).wait(14).to({_off:false},0).wait(2).to({_off:true},1).wait(555));
 
 	// video1jane
-	this.instance_2 = new lib.videojane();
-	this.instance_2.parent = this;
-	this.instance_2.setTransform(533.6,290.4,1,1,0,0,0,169.6,126.4);
-	new cjs.ButtonHelper(this.instance_2, 0, 1, 1);
+	this.instance_2 = new lib.my_youtube({'id': 'instance_2', 'src':'https://www.youtube.com/embed/AiC1ShqmFQk', 'alt':'youtube video', 'frameborder':'0', 'allowfullscreen':'allowfullscreen', 'visible':true, 'class':'ui-youtube'});
 
-	this.shape_56 = new cjs.Shape();
-	this.shape_56.graphics.f().s("#006699").ss(0.6).p("A6fzvMA0/AAAMAAAAnfMg0/AAAg");
-	this.shape_56.setTransform(533.6,290.4);
+	this.instance_2.setTransform(750.9,284.4,3.26,2.339,0,0,0,50.3,50.1);
+	this.instance_2._off = true;
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.shape_56},{t:this.instance_2}]},14).to({state:[{t:this.shape_56},{t:this.instance_2}]},2).to({state:[]},1).wait(555));
+	this.timeline.addTween(cjs.Tween.get(this.instance_2).wait(14).to({_off:false},0).wait(2).to({_off:true},1).wait(555));
+
+	// videoprueba
+	this.instance_3 = new lib.an_Video({'id': 'instance_3', 'src':'https://www.youtube.com/watch?v=BYkA4gt0wUc', 'autoplay':true, 'controls':true, 'muted':false, 'loop':true, 'poster':'images/', 'preload':true, 'class':'video'});
+
+	this.instance_3.setTransform(597.5,607,0.37,0.588,0,0,0,200,150);
+	this.instance_3._off = true;
+
+	this.timeline.addTween(cjs.Tween.get(this.instance_3).wait(14).to({_off:false},0).wait(2).to({_off:true},1).wait(555));
 
 	// video2jhon
-	this.instance_3 = new lib.videojhon();
-	this.instance_3.parent = this;
-	this.instance_3.setTransform(265.5,649.1,1,1,0,0,0,209.7,136.6);
-	new cjs.ButtonHelper(this.instance_3, 0, 1, 1);
+	this.instance_4 = new lib.my_youtube({'id': 'instance_4', 'src':'https://www.youtube.com/embed/gu2ncBJX95k', 'alt':'youtube video', 'frameborder':'0', 'allowfullscreen':'allowfullscreen', 'visible':true, 'class':'ui-youtube'});
 
-	this.shape_57 = new cjs.Shape();
-	this.shape_57.graphics.f().s("#006699").ss(0.6).p("EggwgVUMBBhAAAMAAAAqqMhBhAAAg");
-	this.shape_57.setTransform(265.5,649.1);
+	this.instance_4.setTransform(263.7,631.6,4.058,2.642,0,0,0,50.1,50.1);
+	this.instance_4._off = true;
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.shape_57},{t:this.instance_3}]},14).to({state:[{t:this.shape_57},{t:this.instance_3}]},2).to({state:[]},1).wait(555));
+	this.timeline.addTween(cjs.Tween.get(this.instance_4).wait(14).to({_off:false},0).wait(2).to({_off:true},1).wait(555));
 
 	// titulopagina4
 	this.text_8 = new cjs.Text("PROCESO DE CREACIÓN", "24px 'Footlight MT Light'", "#256885");
@@ -22424,23 +22405,23 @@ p.nominalBounds = new cjs.Rectangle(-199.4,-160.3,476.2,292);
 	this.timeline.addTween(cjs.Tween.get(this.text_9).wait(17).to({_off:false},0).wait(2).to({_off:true},1).wait(552));
 
 	// rectangulomoraocubre
-	this.shape_58 = new cjs.Shape();
-	this.shape_58.graphics.f().s("#000033").ss(1,1,1).p("Apmj7ITNAAIAAH3IzNAAg");
-	this.shape_58.setTransform(390.5,555.9);
+	this.shape_56 = new cjs.Shape();
+	this.shape_56.graphics.f().s("#000033").ss(1,1,1).p("Apmj7ITNAAIAAH3IzNAAg");
+	this.shape_56.setTransform(390.5,555.9);
 
-	this.shape_59 = new cjs.Shape();
-	this.shape_59.graphics.f("rgba(153,153,204,0.898)").s().p("ApmD8IAAn3ITNAAIAAH3g");
-	this.shape_59.setTransform(390.5,555.9);
+	this.shape_57 = new cjs.Shape();
+	this.shape_57.graphics.f("rgba(153,153,204,0.898)").s().p("ApmD8IAAn3ITNAAIAAH3g");
+	this.shape_57.setTransform(390.5,555.9);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.shape_59},{t:this.shape_58}]},20).to({state:[{t:this.shape_59},{t:this.shape_58}]},2).to({state:[]},1).wait(549));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.shape_57},{t:this.shape_56}]},20).to({state:[{t:this.shape_57},{t:this.shape_56}]},2).to({state:[]},1).wait(549));
 
 	// imagenaplicativos
-	this.instance_4 = new lib.app();
-	this.instance_4.parent = this;
-	this.instance_4.setTransform(313,449,0.662,0.558);
-	this.instance_4._off = true;
+	this.instance_5 = new lib.app();
+	this.instance_5.parent = this;
+	this.instance_5.setTransform(313,449,0.662,0.558);
+	this.instance_5._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_4).wait(20).to({_off:false},0).wait(2).to({_off:true},1).wait(549));
+	this.timeline.addTween(cjs.Tween.get(this.instance_5).wait(20).to({_off:false},0).wait(2).to({_off:true},1).wait(549));
 
 	// textoaplicativos
 	this.text_10 = new cjs.Text(" - •Nuestro compromiso con el trabajo de calidad, nuestra visión es generar productos que sean competitivos en el mercado y para ello deben cumplir con los estándares.\n•Nuestras ideas frescas que provienen de nuestros entornos locales, cada vez se valora más la originalidad e identidad.\n", "bold 12px 'Corbel'");
@@ -22449,26 +22430,26 @@ p.nominalBounds = new cjs.Rectangle(-199.4,-160.3,476.2,292);
 	this.text_10.parent = this;
 	this.text_10.setTransform(299.9,132.6,2.009,1.489);
 
-	this.shape_60 = new cjs.Shape();
-	this.shape_60.graphics.f().s("#000033").ss(0.5,1,1).p("AgOABQAIgBAGAAQAHAAAIAB");
-	this.shape_60.setTransform(669.9,271);
+	this.shape_58 = new cjs.Shape();
+	this.shape_58.graphics.f().s("#000033").ss(0.5,1,1).p("AgOABQAIgBAGAAQAHAAAIAB");
+	this.shape_58.setTransform(669.9,271);
 
-	this.shape_61 = new cjs.Shape();
-	this.shape_61.graphics.rf(["#008FEB","#53C0F0"],[0,1],1.5,32.5,0,1.5,32.5,20.4).s().p("AgOAAIAOAAIAPAAg");
-	this.shape_61.setTransform(669.9,271);
+	this.shape_59 = new cjs.Shape();
+	this.shape_59.graphics.rf(["#008FEB","#53C0F0"],[0,1],1.5,32.5,0,1.5,32.5,20.4).s().p("AgOAAIAOAAIAPAAg");
+	this.shape_59.setTransform(669.9,271);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.shape_61},{t:this.shape_60},{t:this.text_10}]},20).to({state:[{t:this.shape_61},{t:this.shape_60},{t:this.text_10}]},2).to({state:[]},1).wait(549));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.shape_59},{t:this.shape_58},{t:this.text_10}]},20).to({state:[{t:this.shape_59},{t:this.shape_58},{t:this.text_10}]},2).to({state:[]},1).wait(549));
 
 	// cajtextblancaapl
-	this.shape_62 = new cjs.Shape();
-	this.shape_62.graphics.f().s("#00CCFF").ss(1,1,1).p("Ege3g1BMA9uAAAMAAABqDMg9uAAAg");
-	this.shape_62.setTransform(495.4,469);
+	this.shape_60 = new cjs.Shape();
+	this.shape_60.graphics.f().s("#00CCFF").ss(1,1,1).p("Ege3g1BMA9uAAAMAAABqDMg9uAAAg");
+	this.shape_60.setTransform(495.4,469);
 
-	this.shape_63 = new cjs.Shape();
-	this.shape_63.graphics.f("rgba(255,255,255,0.8)").s().p("Ege2A1CMAAAhqCMA9uAAAMAAABqCg");
-	this.shape_63.setTransform(495.4,469);
+	this.shape_61 = new cjs.Shape();
+	this.shape_61.graphics.f("rgba(255,255,255,0.8)").s().p("Ege2A1CMAAAhqCMA9uAAAMAAABqCg");
+	this.shape_61.setTransform(495.4,469);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.shape_63},{t:this.shape_62}]},20).to({state:[{t:this.shape_63},{t:this.shape_62}]},2).to({state:[]},1).wait(549));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.shape_61},{t:this.shape_60}]},20).to({state:[{t:this.shape_61},{t:this.shape_60}]},2).to({state:[]},1).wait(549));
 
 	// botonanimacionapl
 	this.animacion1 = new lib.animacion();
@@ -22517,9 +22498,9 @@ p.nominalBounds = new cjs.Rectangle(-199.4,-160.3,476.2,292);
 	this.timeline.addTween(cjs.Tween.get(this.text_11).wait(20).to({_off:false},0).wait(2).to({_off:true},1).wait(549));
 
 	// imagendweb
-	this.instance_5 = new lib.web();
-	this.instance_5.parent = this;
-	this.instance_5.setTransform(333,334,0.525,0.595);
+	this.instance_6 = new lib.web();
+	this.instance_6.parent = this;
+	this.instance_6.setTransform(333,334,0.525,0.595);
 
 	this.text_12 = new cjs.Text("\n\n", "bold 10px 'Corbel'");
 	this.text_12.lineHeight = 15;
@@ -22527,7 +22508,7 @@ p.nominalBounds = new cjs.Rectangle(-199.4,-160.3,476.2,292);
 	this.text_12.parent = this;
 	this.text_12.setTransform(261.6,100.5,1.71,1.489);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.text_12},{t:this.instance_5}]},23).to({state:[{t:this.text_12},{t:this.instance_5}]},2).to({state:[]},1).wait(546));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.text_12},{t:this.instance_6}]},23).to({state:[{t:this.text_12},{t:this.instance_6}]},2).to({state:[]},1).wait(546));
 
 	// textodweb
 	this.text_13 = new cjs.Text(" - Diseñado para su distribución por medio de las nuevas Tecnologías de la información, (computadores, teléfonos inteligentes, etc.) y Cuya función es brindar una experiencia satisfactoria al cliente en cuanto a su ingreso en el mercado digital y de las comunicaciones, el cual está marcando la parada en el mundo de la publicidad, ahora los jóvenes usan mayoritariamente las redes sociales y las páginas mediáticas como Youtube para mantenerse informados y para socializar por lo que la multimedia y los ambientes virtuales son fundamentales para cualquier empresa hoy en día. ", "bold 15px 'Corbel'");
@@ -22536,26 +22517,26 @@ p.nominalBounds = new cjs.Rectangle(-199.4,-160.3,476.2,292);
 	this.text_13.parent = this;
 	this.text_13.setTransform(272.9,117.5);
 
-	this.shape_64 = new cjs.Shape();
-	this.shape_64.graphics.f().s("#000033").ss(0.5,1,1).p("AgbABQAOgBANAAQAPAAANAB");
-	this.shape_64.setTransform(1063,274.8);
+	this.shape_62 = new cjs.Shape();
+	this.shape_62.graphics.f().s("#000033").ss(0.5,1,1).p("AgbABQAOgBANAAQAPAAANAB");
+	this.shape_62.setTransform(1063,274.8);
 
-	this.shape_65 = new cjs.Shape();
-	this.shape_65.graphics.rf(["#008FEB","#53C0F0"],[0,1],3,32.5,0,3,32.5,39.9).s().p("AgcAAIAcAAIAdAAg");
-	this.shape_65.setTransform(1063,274.8);
+	this.shape_63 = new cjs.Shape();
+	this.shape_63.graphics.rf(["#008FEB","#53C0F0"],[0,1],3,32.5,0,3,32.5,39.9).s().p("AgcAAIAcAAIAdAAg");
+	this.shape_63.setTransform(1063,274.8);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.shape_65},{t:this.shape_64},{t:this.text_13}]},23).to({state:[{t:this.shape_65},{t:this.shape_64},{t:this.text_13}]},2).to({state:[]},1).wait(546));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.shape_63},{t:this.shape_62},{t:this.text_13}]},23).to({state:[{t:this.shape_63},{t:this.shape_62},{t:this.text_13}]},2).to({state:[]},1).wait(546));
 
 	// cajtextblancadweb
-	this.shape_66 = new cjs.Shape();
-	this.shape_66.graphics.f().s("#00CCFF").ss(1,1,1).p("EAiVg4PMAAABwfMhEpAAAMAAAhwfg");
-	this.shape_66.setTransform(489,460);
+	this.shape_64 = new cjs.Shape();
+	this.shape_64.graphics.f().s("#00CCFF").ss(1,1,1).p("EAiVg4PMAAABwfMhEpAAAMAAAhwfg");
+	this.shape_64.setTransform(489,460);
 
-	this.shape_67 = new cjs.Shape();
-	this.shape_67.graphics.f("rgba(255,255,255,0.8)").s().p("EgiUA4QMAAAhwfMBEpAAAMAAABwfg");
-	this.shape_67.setTransform(489,460);
+	this.shape_65 = new cjs.Shape();
+	this.shape_65.graphics.f("rgba(255,255,255,0.8)").s().p("EgiUA4QMAAAhwfMBEpAAAMAAABwfg");
+	this.shape_65.setTransform(489,460);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.shape_67},{t:this.shape_66}]},23).to({state:[{t:this.shape_67},{t:this.shape_66}]},2).to({state:[]},1).wait(546));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.shape_65},{t:this.shape_64}]},23).to({state:[{t:this.shape_65},{t:this.shape_64}]},2).to({state:[]},1).wait(546));
 
 	// botonanimaciondweb
 	this.animacion2 = new lib.animacion();
@@ -22604,19 +22585,19 @@ p.nominalBounds = new cjs.Rectangle(-199.4,-160.3,476.2,292);
 	this.timeline.addTween(cjs.Tween.get(this.text_14).wait(23).to({_off:false},0).wait(2).to({_off:true},1).wait(546));
 
 	// imagenesimcorp
-	this.instance_6 = new lib.Pantallazo();
-	this.instance_6.parent = this;
-	this.instance_6.setTransform(391,443,0.124,0.144);
-
-	this.instance_7 = new lib.cuadricula();
+	this.instance_7 = new lib.Pantallazo();
 	this.instance_7.parent = this;
-	this.instance_7.setTransform(584,194,0.331,0.307);
+	this.instance_7.setTransform(391,443,0.124,0.144);
 
-	this.instance_8 = new lib.Blancoynegro1();
+	this.instance_8 = new lib.cuadricula();
 	this.instance_8.parent = this;
-	this.instance_8.setTransform(399,219,0.408,0.434);
+	this.instance_8.setTransform(584,194,0.331,0.307);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_8},{t:this.instance_7},{t:this.instance_6}]},26).to({state:[{t:this.instance_8},{t:this.instance_7},{t:this.instance_6}]},2).to({state:[]},1).wait(543));
+	this.instance_9 = new lib.Blancoynegro1();
+	this.instance_9.parent = this;
+	this.instance_9.setTransform(399,219,0.408,0.434);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_9},{t:this.instance_8},{t:this.instance_7}]},26).to({state:[{t:this.instance_9},{t:this.instance_8},{t:this.instance_7}]},2).to({state:[]},1).wait(543));
 
 	// textoimcorp
 	this.text_15 = new cjs.Text(" - Creación de la imagen e identidad corporativa\n\n\n\n\n\n\n• Elaboración de recursos multimedia para la promoción y establecimiento\nde la imagen corporativa en el mercado.\n\n\n\n\n\n\nNuestros servicios se enfocan en el campo del marketing y las comunicaciones, elaboramos productos digitales de tipo multimedia, que pueden incluir video, imagen y sonido, alternativamente y que están elaborados con un diseño atractivo y llamativo.", "bold 12px 'Corbel'");
@@ -22625,26 +22606,26 @@ p.nominalBounds = new cjs.Rectangle(-199.4,-160.3,476.2,292);
 	this.text_15.parent = this;
 	this.text_15.setTransform(309.8,146.4,1.71,1.489);
 
-	this.shape_68 = new cjs.Shape();
-	this.shape_68.graphics.f().s("#000033").ss(0.5,1,1).p("AgbABQAOgBANAAQAPAAANAB");
-	this.shape_68.setTransform(1063,274.8);
+	this.shape_66 = new cjs.Shape();
+	this.shape_66.graphics.f().s("#000033").ss(0.5,1,1).p("AgbABQAOgBANAAQAPAAANAB");
+	this.shape_66.setTransform(1063,274.8);
 
-	this.shape_69 = new cjs.Shape();
-	this.shape_69.graphics.rf(["#008FEB","#53C0F0"],[0,1],3,32.5,0,3,32.5,39.9).s().p("AgcAAIAcAAIAdAAg");
-	this.shape_69.setTransform(1063,274.8);
+	this.shape_67 = new cjs.Shape();
+	this.shape_67.graphics.rf(["#008FEB","#53C0F0"],[0,1],3,32.5,0,3,32.5,39.9).s().p("AgcAAIAcAAIAdAAg");
+	this.shape_67.setTransform(1063,274.8);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.shape_69},{t:this.shape_68},{t:this.text_15}]},26).to({state:[{t:this.shape_69},{t:this.shape_68},{t:this.text_15}]},2).to({state:[]},1).wait(543));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.shape_67},{t:this.shape_66},{t:this.text_15}]},26).to({state:[{t:this.shape_67},{t:this.shape_66},{t:this.text_15}]},2).to({state:[]},1).wait(543));
 
 	// cajtextblancaimcorp
-	this.shape_70 = new cjs.Shape();
-	this.shape_70.graphics.f().s("#00CCFF").ss(1,1,1).p("Ege3g1BMA9uAAAMAAABqDMg9uAAAg");
-	this.shape_70.setTransform(495.4,469);
+	this.shape_68 = new cjs.Shape();
+	this.shape_68.graphics.f().s("#00CCFF").ss(1,1,1).p("Ege3g1BMA9uAAAMAAABqDMg9uAAAg");
+	this.shape_68.setTransform(495.4,469);
 
-	this.shape_71 = new cjs.Shape();
-	this.shape_71.graphics.f("rgba(255,255,255,0.8)").s().p("Ege2A1CMAAAhqCMA9uAAAMAAABqCg");
-	this.shape_71.setTransform(495.4,469);
+	this.shape_69 = new cjs.Shape();
+	this.shape_69.graphics.f("rgba(255,255,255,0.8)").s().p("Ege2A1CMAAAhqCMA9uAAAMAAABqCg");
+	this.shape_69.setTransform(495.4,469);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.shape_71},{t:this.shape_70}]},26).to({state:[{t:this.shape_71},{t:this.shape_70}]},2).to({state:[]},1).wait(543));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.shape_69},{t:this.shape_68}]},26).to({state:[{t:this.shape_69},{t:this.shape_68}]},2).to({state:[]},1).wait(543));
 
 	// botonanimacionimcorp
 	this.animacion3 = new lib.animacion();
@@ -22708,26 +22689,26 @@ p.nominalBounds = new cjs.Rectangle(-199.4,-160.3,476.2,292);
 	this.text_17.parent = this;
 	this.text_17.setTransform(309.5,510.8,1.71,1.489);
 
-	this.shape_72 = new cjs.Shape();
-	this.shape_72.graphics.f().s("#000033").ss(0.5,1,1).p("AgbABQAOgBANAAQAPAAANAB");
-	this.shape_72.setTransform(1063,274.8);
+	this.shape_70 = new cjs.Shape();
+	this.shape_70.graphics.f().s("#000033").ss(0.5,1,1).p("AgbABQAOgBANAAQAPAAANAB");
+	this.shape_70.setTransform(1063,274.8);
 
-	this.shape_73 = new cjs.Shape();
-	this.shape_73.graphics.rf(["#008FEB","#53C0F0"],[0,1],3,32.5,0,3,32.5,39.9).s().p("AgcAAIAcAAIAdAAg");
-	this.shape_73.setTransform(1063,274.8);
+	this.shape_71 = new cjs.Shape();
+	this.shape_71.graphics.rf(["#008FEB","#53C0F0"],[0,1],3,32.5,0,3,32.5,39.9).s().p("AgcAAIAcAAIAdAAg");
+	this.shape_71.setTransform(1063,274.8);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.shape_73},{t:this.shape_72},{t:this.text_17}]},29).to({state:[{t:this.shape_73},{t:this.shape_72},{t:this.text_17}]},2).to({state:[]},1).wait(540));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.shape_71},{t:this.shape_70},{t:this.text_17}]},29).to({state:[{t:this.shape_71},{t:this.shape_70},{t:this.text_17}]},2).to({state:[]},1).wait(540));
 
 	// cajtextanimreal
-	this.shape_74 = new cjs.Shape();
-	this.shape_74.graphics.f().s("#000033").ss(0.5,1,1).p("A/fxbMA+/AAAMAAAAi3Mg+/AAAg");
-	this.shape_74.setTransform(491.3,599.6);
+	this.shape_72 = new cjs.Shape();
+	this.shape_72.graphics.f().s("#000033").ss(0.5,1,1).p("A/fxbMA+/AAAMAAAAi3Mg+/AAAg");
+	this.shape_72.setTransform(491.3,599.6);
 
-	this.shape_75 = new cjs.Shape();
-	this.shape_75.graphics.rf(["#008FEB","#53C0F0"],[0,1],0,0,0,0,0,230.5).s().p("A/fRcMAAAgi3MA/AAAAMAAAAi3g");
-	this.shape_75.setTransform(491.3,599.6);
+	this.shape_73 = new cjs.Shape();
+	this.shape_73.graphics.rf(["#008FEB","#53C0F0"],[0,1],0,0,0,0,0,230.5).s().p("A/fRcMAAAgi3MA/AAAAMAAAAi3g");
+	this.shape_73.setTransform(491.3,599.6);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.shape_75},{t:this.shape_74}]},29).to({state:[{t:this.shape_75},{t:this.shape_74}]},2).to({state:[]},1).wait(540));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.shape_73},{t:this.shape_72}]},29).to({state:[{t:this.shape_73},{t:this.shape_72}]},2).to({state:[]},1).wait(540));
 
 	// botonanimacionanim
 	this.animacion1_1 = new lib.animacion();
@@ -22876,18 +22857,18 @@ p.nominalBounds = new cjs.Rectangle(-199.4,-160.3,476.2,292);
 	this.timeline.addTween(cjs.Tween.get(this.text_19).wait(40).to({_off:false},0).to({_off:true},1).wait(531));
 
 	// cajtextblancaqs
-	this.instance_9 = new lib.Interpolación16("synched",0);
-	this.instance_9.parent = this;
-	this.instance_9.setTransform(358.7,523.1);
-	this.instance_9._off = true;
-
-	this.instance_10 = new lib.Interpolación19("synched",0);
+	this.instance_10 = new lib.Interpolación16("synched",0);
 	this.instance_10.parent = this;
-	this.instance_10.setTransform(341.7,641.1);
+	this.instance_10.setTransform(358.7,523.1);
 	this.instance_10._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_9).wait(32).to({_off:false},0).to({_off:true,x:341.7,y:641.1},7).wait(533));
-	this.timeline.addTween(cjs.Tween.get(this.instance_10).wait(32).to({_off:false},7).to({startPosition:0},1).to({_off:true},1).wait(531));
+	this.instance_11 = new lib.Interpolación19("synched",0);
+	this.instance_11.parent = this;
+	this.instance_11.setTransform(341.7,641.1);
+	this.instance_11._off = true;
+
+	this.timeline.addTween(cjs.Tween.get(this.instance_10).wait(32).to({_off:false},0).to({_off:true,x:341.7,y:641.1},7).wait(533));
+	this.timeline.addTween(cjs.Tween.get(this.instance_11).wait(32).to({_off:false},7).to({startPosition:0},1).to({_off:true},1).wait(531));
 
 	// cajaqsomosp1qs2
 	this.cajaqsomos2a = new lib.copiacajaqsomos2();
@@ -22994,18 +22975,18 @@ p.nominalBounds = new cjs.Rectangle(-199.4,-160.3,476.2,292);
 	this.timeline.addTween(cjs.Tween.get(this.text_20).wait(65).to({_off:false},0).to({_off:true},1).wait(506));
 
 	// cajtextblancanov
-	this.instance_11 = new lib.Interpolación16("synched",0);
-	this.instance_11.parent = this;
-	this.instance_11.setTransform(358.7,523.1);
-	this.instance_11._off = true;
-
-	this.instance_12 = new lib.Interpolación23("synched",0);
+	this.instance_12 = new lib.Interpolación16("synched",0);
 	this.instance_12.parent = this;
-	this.instance_12.setTransform(341.7,641.1);
+	this.instance_12.setTransform(358.7,523.1);
 	this.instance_12._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_11).wait(41).to({_off:false},0).to({_off:true,x:341.7,y:641.1},23).wait(508));
-	this.timeline.addTween(cjs.Tween.get(this.instance_12).wait(41).to({_off:false},23).to({startPosition:0},1).to({_off:true},1).wait(506));
+	this.instance_13 = new lib.Interpolación23("synched",0);
+	this.instance_13.parent = this;
+	this.instance_13.setTransform(341.7,641.1);
+	this.instance_13._off = true;
+
+	this.timeline.addTween(cjs.Tween.get(this.instance_12).wait(41).to({_off:false},0).to({_off:true,x:341.7,y:641.1},23).wait(508));
+	this.timeline.addTween(cjs.Tween.get(this.instance_13).wait(41).to({_off:false},23).to({startPosition:0},1).to({_off:true},1).wait(506));
 
 	// cajaqsomosp1qs3
 	this.cajaqsomos3a = new lib.cajaqsomos();
@@ -23113,18 +23094,18 @@ p.nominalBounds = new cjs.Rectangle(-199.4,-160.3,476.2,292);
 	this.timeline.addTween(cjs.Tween.get(this.text_21).wait(90).to({_off:false},0).to({_off:true},1).wait(481));
 
 	// cajtextblancaedit
-	this.instance_13 = new lib.Interpolación16("synched",0);
-	this.instance_13.parent = this;
-	this.instance_13.setTransform(358.7,523.1);
-	this.instance_13._off = true;
-
-	this.instance_14 = new lib.Interpolación27("synched",0);
+	this.instance_14 = new lib.Interpolación16("synched",0);
 	this.instance_14.parent = this;
-	this.instance_14.setTransform(341.7,641.1);
+	this.instance_14.setTransform(358.7,523.1);
 	this.instance_14._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_13).wait(66).to({_off:false},0).to({_off:true,x:341.7,y:641.1},23).wait(483));
-	this.timeline.addTween(cjs.Tween.get(this.instance_14).wait(66).to({_off:false},23).to({startPosition:0},1).to({_off:true},1).wait(481));
+	this.instance_15 = new lib.Interpolación27("synched",0);
+	this.instance_15.parent = this;
+	this.instance_15.setTransform(341.7,641.1);
+	this.instance_15._off = true;
+
+	this.timeline.addTween(cjs.Tween.get(this.instance_14).wait(66).to({_off:false},0).to({_off:true,x:341.7,y:641.1},23).wait(483));
+	this.timeline.addTween(cjs.Tween.get(this.instance_15).wait(66).to({_off:false},23).to({startPosition:0},1).to({_off:true},1).wait(481));
 
 	// cajaqsomosp1qs4
 	this.cajaqsomos4a = new lib.cajaqsomos();
@@ -23231,18 +23212,18 @@ p.nominalBounds = new cjs.Rectangle(-199.4,-160.3,476.2,292);
 	this.timeline.addTween(cjs.Tween.get(this.text_22).wait(114).to({_off:false},0).to({_off:true},1).wait(457));
 
 	// cajtextbanacaet
-	this.instance_15 = new lib.Interpolación16("synched",0);
-	this.instance_15.parent = this;
-	this.instance_15.setTransform(358.7,523.1);
-	this.instance_15._off = true;
-
-	this.instance_16 = new lib.Interpolación31("synched",0);
+	this.instance_16 = new lib.Interpolación16("synched",0);
 	this.instance_16.parent = this;
-	this.instance_16.setTransform(341.7,641.1);
+	this.instance_16.setTransform(358.7,523.1);
 	this.instance_16._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_15).wait(91).to({_off:false},0).to({_off:true,x:341.7,y:641.1},22).wait(459));
-	this.timeline.addTween(cjs.Tween.get(this.instance_16).wait(91).to({_off:false},22).to({startPosition:0},1).to({_off:true},1).wait(457));
+	this.instance_17 = new lib.Interpolación31("synched",0);
+	this.instance_17.parent = this;
+	this.instance_17.setTransform(341.7,641.1);
+	this.instance_17._off = true;
+
+	this.timeline.addTween(cjs.Tween.get(this.instance_16).wait(91).to({_off:false},0).to({_off:true,x:341.7,y:641.1},22).wait(459));
+	this.timeline.addTween(cjs.Tween.get(this.instance_17).wait(91).to({_off:false},22).to({startPosition:0},1).to({_off:true},1).wait(457));
 
 	// cajaqsomosp1qs5
 	this.cajaqsomos5a = new lib.cajaqsomos();
@@ -23349,18 +23330,18 @@ p.nominalBounds = new cjs.Rectangle(-199.4,-160.3,476.2,292);
 	this.timeline.addTween(cjs.Tween.get(this.text_23).wait(139).to({_off:false},0).to({_off:true},1).wait(432));
 
 	// cajtextblancamv
-	this.instance_17 = new lib.Interpolación16("synched",0);
-	this.instance_17.parent = this;
-	this.instance_17.setTransform(358.7,523.1);
-	this.instance_17._off = true;
-
-	this.instance_18 = new lib.Interpolación31("synched",0);
+	this.instance_18 = new lib.Interpolación16("synched",0);
 	this.instance_18.parent = this;
-	this.instance_18.setTransform(341.7,641.1);
+	this.instance_18.setTransform(358.7,523.1);
 	this.instance_18._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_17).wait(115).to({_off:false},0).to({_off:true,x:341.7,y:641.1},23).wait(434));
-	this.timeline.addTween(cjs.Tween.get(this.instance_18).wait(115).to({_off:false},23).to({startPosition:0},1).to({_off:true},1).wait(432));
+	this.instance_19 = new lib.Interpolación31("synched",0);
+	this.instance_19.parent = this;
+	this.instance_19.setTransform(341.7,641.1);
+	this.instance_19._off = true;
+
+	this.timeline.addTween(cjs.Tween.get(this.instance_18).wait(115).to({_off:false},0).to({_off:true,x:341.7,y:641.1},23).wait(434));
+	this.timeline.addTween(cjs.Tween.get(this.instance_19).wait(115).to({_off:false},23).to({startPosition:0},1).to({_off:true},1).wait(432));
 
 	// cajaqsomosp2n1
 	this.cajaqsomos21a = new lib.cajaqsomos();
@@ -23467,23 +23448,23 @@ p.nominalBounds = new cjs.Rectangle(-199.4,-160.3,476.2,292);
 	this.timeline.addTween(cjs.Tween.get(this.text_24).wait(140).to({_off:false},0).to({_off:true},5).wait(21).to({_off:false,text:"\nSomos Una empresa colombiana dedicada a la elaboración de recursos multimedia en los diferentes modos y niveles. nos conformamos como microempresa en el año 2018 y somos ante todo, una entidad autónoma que ofrece servicios en el área de multimedia teniendo comonorte las expectativas del cliente. \n\nCoordinamos factores de promoción y marketing.Contamos con recursos humanos de calidad: entre Ilustradores y desarrolladores",font:"bold 20px 'Times New Roman'",lineHeight:24.2},0).to({_off:true},1).wait(405));
 
 	// cajtextblancaqsp2n1
-	this.instance_19 = new lib.Interpolación23("synched",0);
-	this.instance_19.parent = this;
-	this.instance_19.setTransform(341.7,641.1);
-	this.instance_19._off = true;
-
-	this.instance_20 = new lib.Interpolación16("synched",0);
+	this.instance_20 = new lib.Interpolación23("synched",0);
 	this.instance_20.parent = this;
-	this.instance_20.setTransform(358.7,523.1);
+	this.instance_20.setTransform(341.7,641.1);
 	this.instance_20._off = true;
 
-	this.instance_21 = new lib.Interpolación19("synched",0);
+	this.instance_21 = new lib.Interpolación16("synched",0);
 	this.instance_21.parent = this;
-	this.instance_21.setTransform(341.7,641.1);
+	this.instance_21.setTransform(358.7,523.1);
+	this.instance_21._off = true;
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_19}]},140).to({state:[{t:this.instance_19}]},5).to({state:[{t:this.instance_20}]},12).to({state:[{t:this.instance_21}]},9).to({state:[]},1).wait(405));
-	this.timeline.addTween(cjs.Tween.get(this.instance_19).wait(140).to({_off:false},0).to({startPosition:0},5).to({_off:true,x:358.7,y:523.1},12).wait(415));
-	this.timeline.addTween(cjs.Tween.get(this.instance_20).wait(145).to({_off:false},12).to({_off:true,x:341.7,y:641.1},9).wait(406));
+	this.instance_22 = new lib.Interpolación19("synched",0);
+	this.instance_22.parent = this;
+	this.instance_22.setTransform(341.7,641.1);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_20}]},140).to({state:[{t:this.instance_20}]},5).to({state:[{t:this.instance_21}]},12).to({state:[{t:this.instance_22}]},9).to({state:[]},1).wait(405));
+	this.timeline.addTween(cjs.Tween.get(this.instance_20).wait(140).to({_off:false},0).to({startPosition:0},5).to({_off:true,x:358.7,y:523.1},12).wait(415));
+	this.timeline.addTween(cjs.Tween.get(this.instance_21).wait(145).to({_off:false},12).to({_off:true,x:341.7,y:641.1},9).wait(406));
 
 	// cajaqsomosp2n2
 	this.cajaqsomos22a = new lib.cajaqsomos();
@@ -23590,23 +23571,23 @@ p.nominalBounds = new cjs.Rectangle(-199.4,-160.3,476.2,292);
 	this.timeline.addTween(cjs.Tween.get(this.text_25).wait(167).to({_off:false},0).to({_off:true},5).wait(21).to({_off:false,x:655,y:525.2,text:"Nos sentimos motivados a realizar este proyecto, ya que es un campo de mucha proyección, de hecho tenemos en Colombia algunas revistas muy destacadas que han utilizado el medio virtual para dar información de sus productos y han sido muy exitosa: Cromos, Axxi, Dinero Colombia, Mobiliaria, Soho, entre otras. Las revistas virtuales son el medio ideal para llevar información a más personas, así como para innovar aplicando todos los conceptos de la multimedia, video, audio e interactividad, las cuales no es posible explorar en las revistas tradicionales.\n\nPor otro lado, esta revista virtual ayudará a fortalecer la imagen corporativa y permitirá  llevar información sobre sus productos a más personas fortaleciendo su nicho de mercado. Por todas estas razones, nosotros buscamos presentar un producto de calidad que para nosotros es una oportunidad de mostrar nuestro potencial en creatividad e innovación.  \nGrupo Dinamo Multimedia",font:"italic 16px 'Times New Roman'",textAlign:NaN},0).to({_off:true},1).wait(378));
 
 	// cajtextblancaqsp2n2
-	this.instance_22 = new lib.Interpolación23("synched",0);
-	this.instance_22.parent = this;
-	this.instance_22.setTransform(341.7,641.1);
-	this.instance_22._off = true;
-
-	this.instance_23 = new lib.Interpolación16("synched",0);
+	this.instance_23 = new lib.Interpolación23("synched",0);
 	this.instance_23.parent = this;
-	this.instance_23.setTransform(358.7,523.1);
+	this.instance_23.setTransform(341.7,641.1);
 	this.instance_23._off = true;
 
-	this.instance_24 = new lib.Interpolación19("synched",0);
+	this.instance_24 = new lib.Interpolación16("synched",0);
 	this.instance_24.parent = this;
-	this.instance_24.setTransform(341.7,641.1);
+	this.instance_24.setTransform(358.7,523.1);
+	this.instance_24._off = true;
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_22}]},167).to({state:[{t:this.instance_22}]},5).to({state:[{t:this.instance_23}]},12).to({state:[{t:this.instance_24}]},9).to({state:[]},1).wait(378));
-	this.timeline.addTween(cjs.Tween.get(this.instance_22).wait(167).to({_off:false},0).to({startPosition:0},5).to({_off:true,x:358.7,y:523.1},12).wait(388));
-	this.timeline.addTween(cjs.Tween.get(this.instance_23).wait(172).to({_off:false},12).to({_off:true,x:341.7,y:641.1},9).wait(379));
+	this.instance_25 = new lib.Interpolación19("synched",0);
+	this.instance_25.parent = this;
+	this.instance_25.setTransform(341.7,641.1);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_23}]},167).to({state:[{t:this.instance_23}]},5).to({state:[{t:this.instance_24}]},12).to({state:[{t:this.instance_25}]},9).to({state:[]},1).wait(378));
+	this.timeline.addTween(cjs.Tween.get(this.instance_23).wait(167).to({_off:false},0).to({startPosition:0},5).to({_off:true,x:358.7,y:523.1},12).wait(388));
+	this.timeline.addTween(cjs.Tween.get(this.instance_24).wait(172).to({_off:false},12).to({_off:true,x:341.7,y:641.1},9).wait(379));
 
 	// cajaqsomosp2n3
 	this.cajaqsomos23a = new lib.cajaqsomos();
@@ -23713,23 +23694,23 @@ p.nominalBounds = new cjs.Rectangle(-199.4,-160.3,476.2,292);
 	this.timeline.addTween(cjs.Tween.get(this.text_26).wait(194).to({_off:false},0).to({_off:true},5).wait(21).to({_off:false,text:"*Editor audio visual.\nJane fernanda moreano\nMi compromiso es generar la magia en las escenas e imágenes a través del sonido aplicado a cada evento que se presente en el desarrollo de la aplicación.\nSu habilidad para entrelazar secuencias digitales nos llama la atención. Es la persona responsable del desarrollo de las animaciones en nuestro proyecto.\n\n*Director de arte y producción.\nJhon jairo hernandez\nMi compromiso principal será garantizar la calidad de la imagen en el desarrollo del proyecto multimedia. Es la persona que maneja las inversiones a ejecutar para el desarrollo del proyecto. utilería , vestuario maquillaje.inversionesplanificadas y extraordinarias.",font:"15px 'Times New Roman'",lineHeight:18.6},0).to({_off:true},1).wait(351));
 
 	// cajtextblancaqsp2n3
-	this.instance_25 = new lib.Interpolación23("synched",0);
-	this.instance_25.parent = this;
-	this.instance_25.setTransform(341.7,641.1);
-	this.instance_25._off = true;
-
-	this.instance_26 = new lib.Interpolación16("synched",0);
+	this.instance_26 = new lib.Interpolación23("synched",0);
 	this.instance_26.parent = this;
-	this.instance_26.setTransform(358.7,523.1);
+	this.instance_26.setTransform(341.7,641.1);
 	this.instance_26._off = true;
 
-	this.instance_27 = new lib.Interpolación19("synched",0);
+	this.instance_27 = new lib.Interpolación16("synched",0);
 	this.instance_27.parent = this;
-	this.instance_27.setTransform(341.7,641.1);
+	this.instance_27.setTransform(358.7,523.1);
+	this.instance_27._off = true;
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_25}]},194).to({state:[{t:this.instance_25}]},5).to({state:[{t:this.instance_26}]},12).to({state:[{t:this.instance_27}]},9).to({state:[]},1).wait(351));
-	this.timeline.addTween(cjs.Tween.get(this.instance_25).wait(194).to({_off:false},0).to({startPosition:0},5).to({_off:true,x:358.7,y:523.1},12).wait(361));
-	this.timeline.addTween(cjs.Tween.get(this.instance_26).wait(199).to({_off:false},12).to({_off:true,x:341.7,y:641.1},9).wait(352));
+	this.instance_28 = new lib.Interpolación19("synched",0);
+	this.instance_28.parent = this;
+	this.instance_28.setTransform(341.7,641.1);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_26}]},194).to({state:[{t:this.instance_26}]},5).to({state:[{t:this.instance_27}]},12).to({state:[{t:this.instance_28}]},9).to({state:[]},1).wait(351));
+	this.timeline.addTween(cjs.Tween.get(this.instance_26).wait(194).to({_off:false},0).to({startPosition:0},5).to({_off:true,x:358.7,y:523.1},12).wait(361));
+	this.timeline.addTween(cjs.Tween.get(this.instance_27).wait(199).to({_off:false},12).to({_off:true,x:341.7,y:641.1},9).wait(352));
 
 	// cajaqsomosp2n4
 	this.cajaqsomos24a = new lib.cajaqsomos();
@@ -23836,23 +23817,23 @@ p.nominalBounds = new cjs.Rectangle(-199.4,-160.3,476.2,292);
 	this.timeline.addTween(cjs.Tween.get(this.text_27).wait(221).to({_off:false},0).to({_off:true},5).wait(21).to({_off:false,text:"MISIÓN\nSomos una empresa joven, que surge con el firme propósito de hacer un cambio\nen el mercado de la producción de multimedia.\nNuestro objetivo es ofrecer servicios innovadores en base a la responsabilidad social\ny comprometido con el buen servicio. Entregando productos de calidad que proyecten\nen forma eficaz los valores y aspiraciones de nuestros clientes\n\nVISIÓN\nDinamo multimedia nace con la visión de crear una cultura multimedial introduciendo\nproductos innovadores dentro del mercado del marketing y las comunicaciones. Animando cada\nvez a más empresas jóvenes y microempresas a ingresar dal marketing virtual.\nBuscamos introducir elementos locales como producto de exportación para el marketing\nglobal.",font:"15px 'Times New Roman'",lineHeight:18.6,lineWidth:667},0).to({_off:true},1).wait(324));
 
 	// cajtextblancaqsp2n4
-	this.instance_28 = new lib.Interpolación23("synched",0);
-	this.instance_28.parent = this;
-	this.instance_28.setTransform(341.7,641.1);
-	this.instance_28._off = true;
-
-	this.instance_29 = new lib.Interpolación16("synched",0);
+	this.instance_29 = new lib.Interpolación23("synched",0);
 	this.instance_29.parent = this;
-	this.instance_29.setTransform(358.7,523.1);
+	this.instance_29.setTransform(341.7,641.1);
 	this.instance_29._off = true;
 
-	this.instance_30 = new lib.Interpolación19("synched",0);
+	this.instance_30 = new lib.Interpolación16("synched",0);
 	this.instance_30.parent = this;
-	this.instance_30.setTransform(341.7,641.1);
+	this.instance_30.setTransform(358.7,523.1);
+	this.instance_30._off = true;
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_28}]},221).to({state:[{t:this.instance_28}]},5).to({state:[{t:this.instance_29}]},12).to({state:[{t:this.instance_30}]},9).to({state:[]},1).wait(324));
-	this.timeline.addTween(cjs.Tween.get(this.instance_28).wait(221).to({_off:false},0).to({startPosition:0},5).to({_off:true,x:358.7,y:523.1},12).wait(334));
-	this.timeline.addTween(cjs.Tween.get(this.instance_29).wait(226).to({_off:false},12).to({_off:true,x:341.7,y:641.1},9).wait(325));
+	this.instance_31 = new lib.Interpolación19("synched",0);
+	this.instance_31.parent = this;
+	this.instance_31.setTransform(341.7,641.1);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_29}]},221).to({state:[{t:this.instance_29}]},5).to({state:[{t:this.instance_30}]},12).to({state:[{t:this.instance_31}]},9).to({state:[]},1).wait(324));
+	this.timeline.addTween(cjs.Tween.get(this.instance_29).wait(221).to({_off:false},0).to({startPosition:0},5).to({_off:true,x:358.7,y:523.1},12).wait(334));
+	this.timeline.addTween(cjs.Tween.get(this.instance_30).wait(226).to({_off:false},12).to({_off:true,x:341.7,y:641.1},9).wait(325));
 
 	// cajaqsomosp3e1
 	this.cajaqsomos31a = new lib.cajaqsomos();
@@ -23960,23 +23941,23 @@ p.nominalBounds = new cjs.Rectangle(-199.4,-160.3,476.2,292);
 	this.timeline.addTween(cjs.Tween.get(this.text_28).wait(248).to({_off:false},0).to({_off:true},5).wait(21).to({_off:false,x:28.1,y:517.2,text:"\nSomos Una empresa colombiana dedicada a la elaboración de recursos multimedia en los diferentes modos y niveles. nos conformamos como microempresa en el año 2018 y somos ante todo, una entidad autónoma que ofrece servicios en el área de multimedia teniendo comonorte las expectativas del cliente. \n\nCoordinamos factores de promoción y marketing.Contamos con recursos humanos de calidad: entre Ilustradores y desarrolladores",font:"bold 20px 'Times New Roman'",textAlign:0,lineHeight:24.2},0).to({_off:true},1).wait(297));
 
 	// cajtextblancaedit3e1
-	this.instance_31 = new lib.Interpolación23("synched",0);
-	this.instance_31.parent = this;
-	this.instance_31.setTransform(341.7,641.1);
-	this.instance_31._off = true;
-
-	this.instance_32 = new lib.Interpolación16("synched",0);
+	this.instance_32 = new lib.Interpolación23("synched",0);
 	this.instance_32.parent = this;
-	this.instance_32.setTransform(358.7,523.1);
+	this.instance_32.setTransform(341.7,641.1);
 	this.instance_32._off = true;
 
-	this.instance_33 = new lib.Interpolación19("synched",0);
+	this.instance_33 = new lib.Interpolación16("synched",0);
 	this.instance_33.parent = this;
-	this.instance_33.setTransform(341.7,641.1);
+	this.instance_33.setTransform(358.7,523.1);
+	this.instance_33._off = true;
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_31}]},248).to({state:[{t:this.instance_31}]},5).to({state:[{t:this.instance_32}]},12).to({state:[{t:this.instance_33}]},9).to({state:[]},1).wait(297));
-	this.timeline.addTween(cjs.Tween.get(this.instance_31).wait(248).to({_off:false},0).to({startPosition:0},5).to({_off:true,x:358.7,y:523.1},12).wait(307));
-	this.timeline.addTween(cjs.Tween.get(this.instance_32).wait(253).to({_off:false},12).to({_off:true,x:341.7,y:641.1},9).wait(298));
+	this.instance_34 = new lib.Interpolación19("synched",0);
+	this.instance_34.parent = this;
+	this.instance_34.setTransform(341.7,641.1);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_32}]},248).to({state:[{t:this.instance_32}]},5).to({state:[{t:this.instance_33}]},12).to({state:[{t:this.instance_34}]},9).to({state:[]},1).wait(297));
+	this.timeline.addTween(cjs.Tween.get(this.instance_32).wait(248).to({_off:false},0).to({startPosition:0},5).to({_off:true,x:358.7,y:523.1},12).wait(307));
+	this.timeline.addTween(cjs.Tween.get(this.instance_33).wait(253).to({_off:false},12).to({_off:true,x:341.7,y:641.1},9).wait(298));
 
 	// cajaqsomosp3e2
 	this.cajaqsomos32a = new lib.cajaqsomos();
@@ -24084,23 +24065,23 @@ p.nominalBounds = new cjs.Rectangle(-199.4,-160.3,476.2,292);
 	this.timeline.addTween(cjs.Tween.get(this.text_29).wait(275).to({_off:false},0).to({_off:true},5).wait(21).to({_off:false,x:28.1,y:517.2,text:"\nEl software libre ofrece muchas oportunidades para desarrollar grandes paginas web:\n\nhttps://developer.mozilla.org/es/docs/Web\n\nLa innovacion es importante y para ello debemos realizarla en un ambiente que promueva\nla calidad de la atención para con el cliente y la prueba constante de estat innova\nciones en terreno real, para ver si realmente funcionan.\n\nhttps://www.merca20.com/innovacion-enfocada-cliente/https://www.campusmvp.es/recursos/post/10-principalestendencias-de-desarrollo-dewebs-en-2017.aspx",font:"16px 'Times New Roman'",textAlign:0},0).to({_off:true},1).wait(270));
 
 	// cajtextblancaedit3e2
-	this.instance_34 = new lib.Interpolación23("synched",0);
-	this.instance_34.parent = this;
-	this.instance_34.setTransform(341.7,641.1);
-	this.instance_34._off = true;
-
-	this.instance_35 = new lib.Interpolación16("synched",0);
+	this.instance_35 = new lib.Interpolación23("synched",0);
 	this.instance_35.parent = this;
-	this.instance_35.setTransform(358.7,523.1);
+	this.instance_35.setTransform(341.7,641.1);
 	this.instance_35._off = true;
 
-	this.instance_36 = new lib.Interpolación19("synched",0);
+	this.instance_36 = new lib.Interpolación16("synched",0);
 	this.instance_36.parent = this;
-	this.instance_36.setTransform(341.7,641.1);
+	this.instance_36.setTransform(358.7,523.1);
+	this.instance_36._off = true;
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_34}]},275).to({state:[{t:this.instance_34}]},5).to({state:[{t:this.instance_35}]},12).to({state:[{t:this.instance_36}]},9).to({state:[]},1).wait(270));
-	this.timeline.addTween(cjs.Tween.get(this.instance_34).wait(275).to({_off:false},0).to({startPosition:0},5).to({_off:true,x:358.7,y:523.1},12).wait(280));
-	this.timeline.addTween(cjs.Tween.get(this.instance_35).wait(280).to({_off:false},12).to({_off:true,x:341.7,y:641.1},9).wait(271));
+	this.instance_37 = new lib.Interpolación19("synched",0);
+	this.instance_37.parent = this;
+	this.instance_37.setTransform(341.7,641.1);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_35}]},275).to({state:[{t:this.instance_35}]},5).to({state:[{t:this.instance_36}]},12).to({state:[{t:this.instance_37}]},9).to({state:[]},1).wait(270));
+	this.timeline.addTween(cjs.Tween.get(this.instance_35).wait(275).to({_off:false},0).to({startPosition:0},5).to({_off:true,x:358.7,y:523.1},12).wait(280));
+	this.timeline.addTween(cjs.Tween.get(this.instance_36).wait(280).to({_off:false},12).to({_off:true,x:341.7,y:641.1},9).wait(271));
 
 	// cajaqsomosp3e3
 	this.cajaqsomos33a = new lib.cajaqsomos();
@@ -24208,23 +24189,23 @@ p.nominalBounds = new cjs.Rectangle(-199.4,-160.3,476.2,292);
 	this.timeline.addTween(cjs.Tween.get(this.text_30).wait(302).to({_off:false},0).to({_off:true},5).wait(21).to({_off:false,x:28.1,y:517.2,text:"*Editor audio visual.\nJane fernanda moreano\nMi compromiso es generar la magia en las escenas e imágenes a través del sonido aplicado a cada evento que se presente en el desarrollo de la aplicación.\nSu habilidad para entrelazar secuencias digitales nos llama la atención. Es la persona responsable del desarrollo de las animaciones en nuestro proyecto.\n\n*Director de arte y producción.\nJhon jairo hernandez\nMi compromiso principal será garantizar la calidad de la imagen en el desarrollo del proyecto multimedia. Es la persona que maneja las inversiones a ejecutar para el desarrollo del proyecto. utilería , vestuario maquillaje.inversionesplanificadas y extraordinarias",font:"15px 'Times New Roman'",textAlign:0,lineHeight:18.6},0).to({_off:true},1).wait(243));
 
 	// cajtextblancaedit3e3
-	this.instance_37 = new lib.Interpolación23("synched",0);
-	this.instance_37.parent = this;
-	this.instance_37.setTransform(341.7,641.1);
-	this.instance_37._off = true;
-
-	this.instance_38 = new lib.Interpolación16("synched",0);
+	this.instance_38 = new lib.Interpolación23("synched",0);
 	this.instance_38.parent = this;
-	this.instance_38.setTransform(358.7,523.1);
+	this.instance_38.setTransform(341.7,641.1);
 	this.instance_38._off = true;
 
-	this.instance_39 = new lib.Interpolación19("synched",0);
+	this.instance_39 = new lib.Interpolación16("synched",0);
 	this.instance_39.parent = this;
-	this.instance_39.setTransform(341.7,641.1);
+	this.instance_39.setTransform(358.7,523.1);
+	this.instance_39._off = true;
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_37}]},302).to({state:[{t:this.instance_37}]},5).to({state:[{t:this.instance_38}]},12).to({state:[{t:this.instance_39}]},9).to({state:[]},1).wait(243));
-	this.timeline.addTween(cjs.Tween.get(this.instance_37).wait(302).to({_off:false},0).to({startPosition:0},5).to({_off:true,x:358.7,y:523.1},12).wait(253));
-	this.timeline.addTween(cjs.Tween.get(this.instance_38).wait(307).to({_off:false},12).to({_off:true,x:341.7,y:641.1},9).wait(244));
+	this.instance_40 = new lib.Interpolación19("synched",0);
+	this.instance_40.parent = this;
+	this.instance_40.setTransform(341.7,641.1);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_38}]},302).to({state:[{t:this.instance_38}]},5).to({state:[{t:this.instance_39}]},12).to({state:[{t:this.instance_40}]},9).to({state:[]},1).wait(243));
+	this.timeline.addTween(cjs.Tween.get(this.instance_38).wait(302).to({_off:false},0).to({startPosition:0},5).to({_off:true,x:358.7,y:523.1},12).wait(253));
+	this.timeline.addTween(cjs.Tween.get(this.instance_39).wait(307).to({_off:false},12).to({_off:true,x:341.7,y:641.1},9).wait(244));
 
 	// cajaqsomosp3e4
 	this.cajaqsomos34a = new lib.cajaqsomos();
@@ -24332,23 +24313,23 @@ p.nominalBounds = new cjs.Rectangle(-199.4,-160.3,476.2,292);
 	this.timeline.addTween(cjs.Tween.get(this.text_31).wait(329).to({_off:false},0).to({_off:true},5).wait(21).to({_off:false,x:34.1,y:521.2,text:"MISIÓN\nSomos una empresa joven, que surge con el firme propósito de hacer un cambio\nen el mercado de la producción de multimedia.\nNuestro objetivo es ofrecer servicios innovadores en base a la responsabilidad social\ny comprometido con el buen servicio. Entregando productos de calidad que proyecten\nen forma eficaz los valores y aspiraciones de nuestros clientes\n\nVISIÓN\nDinamo multimedia nace con la visión de crear una cultura multimedial introduciendo\nproductos innovadores dentro del mercado del marketing y las comunicaciones. Animando cada\nvez a más empresas jóvenes y microempresas a ingresar dal marketing virtual.\nBuscamos introducir elementos locales como producto de exportación para el marketing\nglobal.",font:"15px 'Times New Roman'",textAlign:0,lineHeight:18.6,lineWidth:616},0).to({_off:true},1).wait(216));
 
 	// cajtextbanacaet3e4
-	this.instance_40 = new lib.Interpolación23("synched",0);
-	this.instance_40.parent = this;
-	this.instance_40.setTransform(341.7,641.1);
-	this.instance_40._off = true;
-
-	this.instance_41 = new lib.Interpolación16("synched",0);
+	this.instance_41 = new lib.Interpolación23("synched",0);
 	this.instance_41.parent = this;
-	this.instance_41.setTransform(358.7,523.1);
+	this.instance_41.setTransform(341.7,641.1);
 	this.instance_41._off = true;
 
-	this.instance_42 = new lib.Interpolación19("synched",0);
+	this.instance_42 = new lib.Interpolación16("synched",0);
 	this.instance_42.parent = this;
-	this.instance_42.setTransform(341.7,641.1);
+	this.instance_42.setTransform(358.7,523.1);
+	this.instance_42._off = true;
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_40}]},329).to({state:[{t:this.instance_40}]},5).to({state:[{t:this.instance_41}]},12).to({state:[{t:this.instance_42}]},9).to({state:[]},1).wait(216));
-	this.timeline.addTween(cjs.Tween.get(this.instance_40).wait(329).to({_off:false},0).to({startPosition:0},5).to({_off:true,x:358.7,y:523.1},12).wait(226));
-	this.timeline.addTween(cjs.Tween.get(this.instance_41).wait(334).to({_off:false},12).to({_off:true,x:341.7,y:641.1},9).wait(217));
+	this.instance_43 = new lib.Interpolación19("synched",0);
+	this.instance_43.parent = this;
+	this.instance_43.setTransform(341.7,641.1);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_41}]},329).to({state:[{t:this.instance_41}]},5).to({state:[{t:this.instance_42}]},12).to({state:[{t:this.instance_43}]},9).to({state:[]},1).wait(216));
+	this.timeline.addTween(cjs.Tween.get(this.instance_41).wait(329).to({_off:false},0).to({startPosition:0},5).to({_off:true,x:358.7,y:523.1},12).wait(226));
+	this.timeline.addTween(cjs.Tween.get(this.instance_42).wait(334).to({_off:false},12).to({_off:true,x:341.7,y:641.1},9).wait(217));
 
 	// cajaqsomosp4et1
 	this.cajaqsomos41a = new lib.cajaqsomos();
@@ -24455,23 +24436,23 @@ p.nominalBounds = new cjs.Rectangle(-199.4,-160.3,476.2,292);
 	this.timeline.addTween(cjs.Tween.get(this.text_32).wait(356).to({_off:false},0).to({_off:true},5).wait(21).to({_off:false,text:"\nSomos Una empresa colombiana dedicada a la elaboración de recursos multimedia en los diferentes modos y niveles. nos conformamos como microempresa en el año 2018 y somos ante todo, una entidad autónoma que ofrece servicios en el área de multimedia teniendo comonorte las expectativas del cliente. \n\nCoordinamos factores de promoción y marketing.Contamos con recursos humanos de calidad: entre Ilustradores y desarrolladores",font:"bold 20px 'Times New Roman'",lineHeight:24.2},0).to({_off:true},1).wait(189));
 
 	// cajtextbanacaet4et1
-	this.instance_43 = new lib.Interpolación23("synched",0);
-	this.instance_43.parent = this;
-	this.instance_43.setTransform(341.7,641.1);
-	this.instance_43._off = true;
-
-	this.instance_44 = new lib.Interpolación16("synched",0);
+	this.instance_44 = new lib.Interpolación23("synched",0);
 	this.instance_44.parent = this;
-	this.instance_44.setTransform(358.7,523.1);
+	this.instance_44.setTransform(341.7,641.1);
 	this.instance_44._off = true;
 
-	this.instance_45 = new lib.Interpolación19("synched",0);
+	this.instance_45 = new lib.Interpolación16("synched",0);
 	this.instance_45.parent = this;
-	this.instance_45.setTransform(341.7,641.1);
+	this.instance_45.setTransform(358.7,523.1);
+	this.instance_45._off = true;
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_43}]},356).to({state:[{t:this.instance_43}]},5).to({state:[{t:this.instance_44}]},12).to({state:[{t:this.instance_45}]},9).to({state:[]},1).wait(189));
-	this.timeline.addTween(cjs.Tween.get(this.instance_43).wait(356).to({_off:false},0).to({startPosition:0},5).to({_off:true,x:358.7,y:523.1},12).wait(199));
-	this.timeline.addTween(cjs.Tween.get(this.instance_44).wait(361).to({_off:false},12).to({_off:true,x:341.7,y:641.1},9).wait(190));
+	this.instance_46 = new lib.Interpolación19("synched",0);
+	this.instance_46.parent = this;
+	this.instance_46.setTransform(341.7,641.1);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_44}]},356).to({state:[{t:this.instance_44}]},5).to({state:[{t:this.instance_45}]},12).to({state:[{t:this.instance_46}]},9).to({state:[]},1).wait(189));
+	this.timeline.addTween(cjs.Tween.get(this.instance_44).wait(356).to({_off:false},0).to({startPosition:0},5).to({_off:true,x:358.7,y:523.1},12).wait(199));
+	this.timeline.addTween(cjs.Tween.get(this.instance_45).wait(361).to({_off:false},12).to({_off:true,x:341.7,y:641.1},9).wait(190));
 
 	// cajaqsomosp4et2
 	this.cajaqsomos42a = new lib.cajaqsomos();
@@ -24578,23 +24559,23 @@ p.nominalBounds = new cjs.Rectangle(-199.4,-160.3,476.2,292);
 	this.timeline.addTween(cjs.Tween.get(this.text_33).wait(383).to({_off:false},0).to({_off:true},5).wait(21).to({_off:false,x:655,y:525.2,text:"Nos sentimos motivados a realizar este proyecto, ya que es un campo de mucha proyección, de hecho tenemos en Colombia algunas revistas muy destacadas que han utilizado el medio virtual para dar información de sus productos y han sido muy exitosa: Cromos, Axxi, Dinero Colombia, Mobiliaria, Soho, entre otras. Las revistas virtuales son el medio ideal para llevar información a más personas, así como para innovar aplicando todos los conceptos de la multimedia, video, audio e interactividad, las cuales no es posible explorar en las revistas tradicionales.\n\nPor otro lado, esta revista virtual ayudará a fortalecer la imagen corporativa y permitirá  llevar información sobre sus productos a más personas fortaleciendo su nicho de mercado. Por todas estas razones, nosotros buscamos presentar un producto de calidad que para nosotros es una oportunidad de mostrar nuestro potencial en creatividad e innovación.  \nGrupo Dinamo Multimedia",font:"italic 16px 'Times New Roman'",textAlign:NaN,lineHeight:19.7},0).to({_off:true},1).wait(162));
 
 	// cajtextbanacaet4et2
-	this.instance_46 = new lib.Interpolación23("synched",0);
-	this.instance_46.parent = this;
-	this.instance_46.setTransform(341.7,641.1);
-	this.instance_46._off = true;
-
-	this.instance_47 = new lib.Interpolación16("synched",0);
+	this.instance_47 = new lib.Interpolación23("synched",0);
 	this.instance_47.parent = this;
-	this.instance_47.setTransform(358.7,523.1);
+	this.instance_47.setTransform(341.7,641.1);
 	this.instance_47._off = true;
 
-	this.instance_48 = new lib.Interpolación19("synched",0);
+	this.instance_48 = new lib.Interpolación16("synched",0);
 	this.instance_48.parent = this;
-	this.instance_48.setTransform(341.7,641.1);
+	this.instance_48.setTransform(358.7,523.1);
+	this.instance_48._off = true;
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_46}]},383).to({state:[{t:this.instance_46}]},5).to({state:[{t:this.instance_47}]},12).to({state:[{t:this.instance_48}]},9).to({state:[]},1).wait(162));
-	this.timeline.addTween(cjs.Tween.get(this.instance_46).wait(383).to({_off:false},0).to({startPosition:0},5).to({_off:true,x:358.7,y:523.1},12).wait(172));
-	this.timeline.addTween(cjs.Tween.get(this.instance_47).wait(388).to({_off:false},12).to({_off:true,x:341.7,y:641.1},9).wait(163));
+	this.instance_49 = new lib.Interpolación19("synched",0);
+	this.instance_49.parent = this;
+	this.instance_49.setTransform(341.7,641.1);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_47}]},383).to({state:[{t:this.instance_47}]},5).to({state:[{t:this.instance_48}]},12).to({state:[{t:this.instance_49}]},9).to({state:[]},1).wait(162));
+	this.timeline.addTween(cjs.Tween.get(this.instance_47).wait(383).to({_off:false},0).to({startPosition:0},5).to({_off:true,x:358.7,y:523.1},12).wait(172));
+	this.timeline.addTween(cjs.Tween.get(this.instance_48).wait(388).to({_off:false},12).to({_off:true,x:341.7,y:641.1},9).wait(163));
 
 	// cajaqsomosp4et3
 	this.cajaqsomos43a = new lib.cajaqsomos();
@@ -24701,23 +24682,23 @@ p.nominalBounds = new cjs.Rectangle(-199.4,-160.3,476.2,292);
 	this.timeline.addTween(cjs.Tween.get(this.text_34).wait(410).to({_off:false},0).to({_off:true},5).wait(21).to({_off:false,text:"\nEl software libre ofrece muchas oportunidades para desarrollar grandes paginas web:\n\nhttps://developer.mozilla.org/es/docs/Web\n\nLa innovacion es importante y para ello debemos realizarla en un ambiente que promueva\nla calidad de la atención para con el cliente y la prueba constante de estat innova\nciones en terreno real, para ver si realmente funcionan.\n\nhttps://www.merca20.com/innovacion-enfocada-cliente/https://www.campusmvp.es/recursos/post/10-principalestendencias-de-desarrollo-dewebs-en-2017.aspx",font:"16px 'Times New Roman'",lineHeight:19.7},0).to({_off:true},1).wait(135));
 
 	// cajtextblancaet4et3
-	this.instance_49 = new lib.Interpolación23("synched",0);
-	this.instance_49.parent = this;
-	this.instance_49.setTransform(341.7,641.1);
-	this.instance_49._off = true;
-
-	this.instance_50 = new lib.Interpolación16("synched",0);
+	this.instance_50 = new lib.Interpolación23("synched",0);
 	this.instance_50.parent = this;
-	this.instance_50.setTransform(358.7,523.1);
+	this.instance_50.setTransform(341.7,641.1);
 	this.instance_50._off = true;
 
-	this.instance_51 = new lib.Interpolación19("synched",0);
+	this.instance_51 = new lib.Interpolación16("synched",0);
 	this.instance_51.parent = this;
-	this.instance_51.setTransform(341.7,641.1);
+	this.instance_51.setTransform(358.7,523.1);
+	this.instance_51._off = true;
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_49}]},410).to({state:[{t:this.instance_49}]},5).to({state:[{t:this.instance_50}]},12).to({state:[{t:this.instance_51}]},9).to({state:[]},1).wait(135));
-	this.timeline.addTween(cjs.Tween.get(this.instance_49).wait(410).to({_off:false},0).to({startPosition:0},5).to({_off:true,x:358.7,y:523.1},12).wait(145));
-	this.timeline.addTween(cjs.Tween.get(this.instance_50).wait(415).to({_off:false},12).to({_off:true,x:341.7,y:641.1},9).wait(136));
+	this.instance_52 = new lib.Interpolación19("synched",0);
+	this.instance_52.parent = this;
+	this.instance_52.setTransform(341.7,641.1);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_50}]},410).to({state:[{t:this.instance_50}]},5).to({state:[{t:this.instance_51}]},12).to({state:[{t:this.instance_52}]},9).to({state:[]},1).wait(135));
+	this.timeline.addTween(cjs.Tween.get(this.instance_50).wait(410).to({_off:false},0).to({startPosition:0},5).to({_off:true,x:358.7,y:523.1},12).wait(145));
+	this.timeline.addTween(cjs.Tween.get(this.instance_51).wait(415).to({_off:false},12).to({_off:true,x:341.7,y:641.1},9).wait(136));
 
 	// cajaqsomosp4et4
 	this.cajaqsomos44a = new lib.cajaqsomos();
@@ -24824,23 +24805,23 @@ p.nominalBounds = new cjs.Rectangle(-199.4,-160.3,476.2,292);
 	this.timeline.addTween(cjs.Tween.get(this.text_35).wait(437).to({_off:false},0).to({_off:true},5).wait(21).to({_off:false,x:36.1,y:523.2,text:"MISIÓN\nSomos una empresa joven, que surge con el firme propósito de hacer un cambio\nen el mercado de la producción de multimedia.\nNuestro objetivo es ofrecer servicios innovadores en base a la responsabilidad social\ny comprometido con el buen servicio. Entregando productos de calidad que proyecten\nen forma eficaz los valores y aspiraciones de nuestros clientes\n\nVISIÓN\nDinamo multimedia nace con la visión de crear una cultura multimedial introduciendo\nproductos innovadores dentro del mercado del marketing y las comunicaciones. Animando cada\nvez a más empresas jóvenes y microempresas a ingresar dal marketing virtual.\nBuscamos introducir elementos locales como producto de exportación para el marketing\nglobal.",lineWidth:596},0).to({_off:true},1).wait(108));
 
 	// cajtextblancaet4et4
-	this.instance_52 = new lib.Interpolación23("synched",0);
-	this.instance_52.parent = this;
-	this.instance_52.setTransform(341.7,641.1);
-	this.instance_52._off = true;
-
-	this.instance_53 = new lib.Interpolación16("synched",0);
+	this.instance_53 = new lib.Interpolación23("synched",0);
 	this.instance_53.parent = this;
-	this.instance_53.setTransform(358.7,523.1);
+	this.instance_53.setTransform(341.7,641.1);
 	this.instance_53._off = true;
 
-	this.instance_54 = new lib.Interpolación19("synched",0);
+	this.instance_54 = new lib.Interpolación16("synched",0);
 	this.instance_54.parent = this;
-	this.instance_54.setTransform(341.7,641.1);
+	this.instance_54.setTransform(358.7,523.1);
+	this.instance_54._off = true;
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_52}]},437).to({state:[{t:this.instance_52}]},5).to({state:[{t:this.instance_53}]},12).to({state:[{t:this.instance_54}]},9).to({state:[]},1).wait(108));
-	this.timeline.addTween(cjs.Tween.get(this.instance_52).wait(437).to({_off:false},0).to({startPosition:0},5).to({_off:true,x:358.7,y:523.1},12).wait(118));
-	this.timeline.addTween(cjs.Tween.get(this.instance_53).wait(442).to({_off:false},12).to({_off:true,x:341.7,y:641.1},9).wait(109));
+	this.instance_55 = new lib.Interpolación19("synched",0);
+	this.instance_55.parent = this;
+	this.instance_55.setTransform(341.7,641.1);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_53}]},437).to({state:[{t:this.instance_53}]},5).to({state:[{t:this.instance_54}]},12).to({state:[{t:this.instance_55}]},9).to({state:[]},1).wait(108));
+	this.timeline.addTween(cjs.Tween.get(this.instance_53).wait(437).to({_off:false},0).to({startPosition:0},5).to({_off:true,x:358.7,y:523.1},12).wait(118));
+	this.timeline.addTween(cjs.Tween.get(this.instance_54).wait(442).to({_off:false},12).to({_off:true,x:341.7,y:641.1},9).wait(109));
 
 	// cajaqsomosp5mv1
 	this.cajaqsomos51a = new lib.cajaqsomos();
@@ -24947,23 +24928,23 @@ p.nominalBounds = new cjs.Rectangle(-199.4,-160.3,476.2,292);
 	this.timeline.addTween(cjs.Tween.get(this.text_36).wait(464).to({_off:false},0).to({_off:true},5).wait(21).to({_off:false,x:28.1,y:517.2,text:"\nSomos Una empresa colombiana dedicada a la elaboración de recursos multimedia en los diferentes modos y niveles. nos conformamos como microempresa en el año 2018 y somos ante todo, una entidad autónoma que ofrece servicios en el área de multimedia teniendo comonorte las expectativas del cliente. \n\nCoordinamos factores de promoción y marketing.Contamos con recursos humanos de calidad: entre Ilustradores y desarrolladores",font:"bold 20px 'Times New Roman'",lineHeight:24.2,lineWidth:627},0).to({_off:true},1).wait(81));
 
 	// cajtextblancamv5mv1
-	this.instance_55 = new lib.Interpolación23("synched",0);
-	this.instance_55.parent = this;
-	this.instance_55.setTransform(341.7,641.1);
-	this.instance_55._off = true;
-
-	this.instance_56 = new lib.Interpolación16("synched",0);
+	this.instance_56 = new lib.Interpolación23("synched",0);
 	this.instance_56.parent = this;
-	this.instance_56.setTransform(358.7,523.1);
+	this.instance_56.setTransform(341.7,641.1);
 	this.instance_56._off = true;
 
-	this.instance_57 = new lib.Interpolación19("synched",0);
+	this.instance_57 = new lib.Interpolación16("synched",0);
 	this.instance_57.parent = this;
-	this.instance_57.setTransform(341.7,641.1);
+	this.instance_57.setTransform(358.7,523.1);
+	this.instance_57._off = true;
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_55}]},464).to({state:[{t:this.instance_55}]},5).to({state:[{t:this.instance_56}]},12).to({state:[{t:this.instance_57}]},9).to({state:[]},1).wait(81));
-	this.timeline.addTween(cjs.Tween.get(this.instance_55).wait(464).to({_off:false},0).to({startPosition:0},5).to({_off:true,x:358.7,y:523.1},12).wait(91));
-	this.timeline.addTween(cjs.Tween.get(this.instance_56).wait(469).to({_off:false},12).to({_off:true,x:341.7,y:641.1},9).wait(82));
+	this.instance_58 = new lib.Interpolación19("synched",0);
+	this.instance_58.parent = this;
+	this.instance_58.setTransform(341.7,641.1);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_56}]},464).to({state:[{t:this.instance_56}]},5).to({state:[{t:this.instance_57}]},12).to({state:[{t:this.instance_58}]},9).to({state:[]},1).wait(81));
+	this.timeline.addTween(cjs.Tween.get(this.instance_56).wait(464).to({_off:false},0).to({startPosition:0},5).to({_off:true,x:358.7,y:523.1},12).wait(91));
+	this.timeline.addTween(cjs.Tween.get(this.instance_57).wait(469).to({_off:false},12).to({_off:true,x:341.7,y:641.1},9).wait(82));
 
 	// cajaqsomosp5mv2
 	this.cajaqsomos52a = new lib.cajaqsomos();
@@ -25070,23 +25051,23 @@ p.nominalBounds = new cjs.Rectangle(-199.4,-160.3,476.2,292);
 	this.timeline.addTween(cjs.Tween.get(this.text_37).wait(491).to({_off:false},0).to({_off:true},5).wait(21).to({_off:false,x:655,y:525.2,text:"Nos sentimos motivados a realizar este proyecto, ya que es un campo de mucha proyección, de hecho tenemos en Colombia algunas revistas muy destacadas que han utilizado el medio virtual para dar información de sus productos y han sido muy exitosa: Cromos, Axxi, Dinero Colombia, Mobiliaria, Soho, entre otras. Las revistas virtuales son el medio ideal para llevar información a más personas, así como para innovar aplicando todos los conceptos de la multimedia, video, audio e interactividad, las cuales no es posible explorar en las revistas tradicionales.\n\nPor otro lado, esta revista virtual ayudará a fortalecer la imagen corporativa y permitirá  llevar información sobre sus productos a más personas fortaleciendo su nicho de mercado. Por todas estas razones, nosotros buscamos presentar un producto de calidad que para nosotros es una oportunidad de mostrar nuestro potencial en creatividad e innovación.  \nGrupo Dinamo Multimedia",font:"italic 16px 'Times New Roman'",textAlign:NaN,lineHeight:19.7,lineWidth:627},0).to({_off:true},1).wait(54));
 
 	// cajtextblancamv5mv2
-	this.instance_58 = new lib.Interpolación23("synched",0);
-	this.instance_58.parent = this;
-	this.instance_58.setTransform(341.7,641.1);
-	this.instance_58._off = true;
-
-	this.instance_59 = new lib.Interpolación16("synched",0);
+	this.instance_59 = new lib.Interpolación23("synched",0);
 	this.instance_59.parent = this;
-	this.instance_59.setTransform(358.7,523.1);
+	this.instance_59.setTransform(341.7,641.1);
 	this.instance_59._off = true;
 
-	this.instance_60 = new lib.Interpolación19("synched",0);
+	this.instance_60 = new lib.Interpolación16("synched",0);
 	this.instance_60.parent = this;
-	this.instance_60.setTransform(341.7,641.1);
+	this.instance_60.setTransform(358.7,523.1);
+	this.instance_60._off = true;
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_58}]},491).to({state:[{t:this.instance_58}]},5).to({state:[{t:this.instance_59}]},12).to({state:[{t:this.instance_60}]},9).to({state:[]},1).wait(54));
-	this.timeline.addTween(cjs.Tween.get(this.instance_58).wait(491).to({_off:false},0).to({startPosition:0},5).to({_off:true,x:358.7,y:523.1},12).wait(64));
-	this.timeline.addTween(cjs.Tween.get(this.instance_59).wait(496).to({_off:false},12).to({_off:true,x:341.7,y:641.1},9).wait(55));
+	this.instance_61 = new lib.Interpolación19("synched",0);
+	this.instance_61.parent = this;
+	this.instance_61.setTransform(341.7,641.1);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_59}]},491).to({state:[{t:this.instance_59}]},5).to({state:[{t:this.instance_60}]},12).to({state:[{t:this.instance_61}]},9).to({state:[]},1).wait(54));
+	this.timeline.addTween(cjs.Tween.get(this.instance_59).wait(491).to({_off:false},0).to({startPosition:0},5).to({_off:true,x:358.7,y:523.1},12).wait(64));
+	this.timeline.addTween(cjs.Tween.get(this.instance_60).wait(496).to({_off:false},12).to({_off:true,x:341.7,y:641.1},9).wait(55));
 
 	// cajaqsomosp5mv3
 	this.cajaqsomos53a = new lib.cajaqsomos();
@@ -25193,23 +25174,23 @@ p.nominalBounds = new cjs.Rectangle(-199.4,-160.3,476.2,292);
 	this.timeline.addTween(cjs.Tween.get(this.text_38).wait(518).to({_off:false},0).to({_off:true},5).wait(21).to({_off:false,x:28.1,y:517.2,text:"\nEl software libre ofrece muchas oportunidades para desarrollar grandes paginas web:\n\nhttps://developer.mozilla.org/es/docs/Web\n\nLa innovacion es importante y para ello debemos realizarla en un ambiente que promueva\nla calidad de la atención para con el cliente y la prueba constante de estat innova\nciones en terreno real, para ver si realmente funcionan.\n\nhttps://www.merca20.com/innovacion-enfocada-cliente/https://www.campusmvp.es/recursos/post/10-principalestendencias-de-desarrollo-dewebs-en-2017.aspx",font:"16px 'Times New Roman'",lineHeight:19.7,lineWidth:627},0).to({_off:true},1).wait(27));
 
 	// cajtextblancamv5mv3
-	this.instance_61 = new lib.Interpolación23("synched",0);
-	this.instance_61.parent = this;
-	this.instance_61.setTransform(341.7,641.1);
-	this.instance_61._off = true;
-
-	this.instance_62 = new lib.Interpolación16("synched",0);
+	this.instance_62 = new lib.Interpolación23("synched",0);
 	this.instance_62.parent = this;
-	this.instance_62.setTransform(358.7,523.1);
+	this.instance_62.setTransform(341.7,641.1);
 	this.instance_62._off = true;
 
-	this.instance_63 = new lib.Interpolación19("synched",0);
+	this.instance_63 = new lib.Interpolación16("synched",0);
 	this.instance_63.parent = this;
-	this.instance_63.setTransform(341.7,641.1);
+	this.instance_63.setTransform(358.7,523.1);
+	this.instance_63._off = true;
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_61}]},518).to({state:[{t:this.instance_61}]},5).to({state:[{t:this.instance_62}]},12).to({state:[{t:this.instance_63}]},9).to({state:[]},1).wait(27));
-	this.timeline.addTween(cjs.Tween.get(this.instance_61).wait(518).to({_off:false},0).to({startPosition:0},5).to({_off:true,x:358.7,y:523.1},12).wait(37));
-	this.timeline.addTween(cjs.Tween.get(this.instance_62).wait(523).to({_off:false},12).to({_off:true,x:341.7,y:641.1},9).wait(28));
+	this.instance_64 = new lib.Interpolación19("synched",0);
+	this.instance_64.parent = this;
+	this.instance_64.setTransform(341.7,641.1);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_62}]},518).to({state:[{t:this.instance_62}]},5).to({state:[{t:this.instance_63}]},12).to({state:[{t:this.instance_64}]},9).to({state:[]},1).wait(27));
+	this.timeline.addTween(cjs.Tween.get(this.instance_62).wait(518).to({_off:false},0).to({startPosition:0},5).to({_off:true,x:358.7,y:523.1},12).wait(37));
+	this.timeline.addTween(cjs.Tween.get(this.instance_63).wait(523).to({_off:false},12).to({_off:true,x:341.7,y:641.1},9).wait(28));
 
 	// cajaqsomosp5mv4
 	this.cajaqsomos54a = new lib.cajaqsomos();
@@ -25316,23 +25297,23 @@ p.nominalBounds = new cjs.Rectangle(-199.4,-160.3,476.2,292);
 	this.timeline.addTween(cjs.Tween.get(this.text_39).wait(545).to({_off:false},0).to({_off:true},5).wait(21).to({_off:false,x:28.1,y:517.2,text:"*Editor audio visual.\nJane fernanda moreano\nMi compromiso es generar la magia en las escenas e imágenes a través del sonido aplicado a cada evento que se presente en el desarrollo de la aplicación.\nSu habilidad para entrelazar secuencias digitales nos llama la atención. Es la persona responsable del desarrollo de las animaciones en nuestro proyecto.\n\n*Director de arte y producción.\nJhon jairo hernandez\nMi compromiso principal será garantizar la calidad de la imagen en el desarrollo del proyecto multimedia. Es la persona que maneja las inversiones a ejecutar para el desarrollo del proyecto. utilería , vestuario maquillaje.inversionesplanificadas y extraordinarias",lineWidth:627},0).wait(1));
 
 	// cajtextblancamv5mv4
-	this.instance_64 = new lib.Interpolación23("synched",0);
-	this.instance_64.parent = this;
-	this.instance_64.setTransform(341.7,641.1);
-	this.instance_64._off = true;
-
-	this.instance_65 = new lib.Interpolación16("synched",0);
+	this.instance_65 = new lib.Interpolación23("synched",0);
 	this.instance_65.parent = this;
-	this.instance_65.setTransform(358.7,523.1);
+	this.instance_65.setTransform(341.7,641.1);
 	this.instance_65._off = true;
 
-	this.instance_66 = new lib.Interpolación19("synched",0);
+	this.instance_66 = new lib.Interpolación16("synched",0);
 	this.instance_66.parent = this;
-	this.instance_66.setTransform(341.7,641.1);
+	this.instance_66.setTransform(358.7,523.1);
+	this.instance_66._off = true;
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_64}]},545).to({state:[{t:this.instance_64}]},5).to({state:[{t:this.instance_65}]},12).to({state:[{t:this.instance_66}]},9).wait(1));
-	this.timeline.addTween(cjs.Tween.get(this.instance_64).wait(545).to({_off:false},0).to({startPosition:0},5).to({_off:true,x:358.7,y:523.1},12).wait(10));
-	this.timeline.addTween(cjs.Tween.get(this.instance_65).wait(550).to({_off:false},12).to({_off:true,x:341.7,y:641.1},9).wait(1));
+	this.instance_67 = new lib.Interpolación19("synched",0);
+	this.instance_67.parent = this;
+	this.instance_67.setTransform(341.7,641.1);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_65}]},545).to({state:[{t:this.instance_65}]},5).to({state:[{t:this.instance_66}]},12).to({state:[{t:this.instance_67}]},9).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_65).wait(545).to({_off:false},0).to({startPosition:0},5).to({_off:true,x:358.7,y:523.1},12).wait(10));
+	this.timeline.addTween(cjs.Tween.get(this.instance_66).wait(550).to({_off:false},12).to({_off:true,x:341.7,y:641.1},9).wait(1));
 
 	// titulop3qs
 	this.text_40 = new cjs.Text("¿QUIENES SOMOS?", "24px 'Footlight MT Light'", "#256885");
@@ -25345,54 +25326,54 @@ p.nominalBounds = new cjs.Rectangle(-199.4,-160.3,476.2,292);
 	this.timeline.addTween(cjs.Tween.get(this.text_40).wait(32).to({_off:false},0).wait(540));
 
 	// Cortinaderecha
+	this.shape_74 = new cjs.Shape();
+	this.shape_74.graphics.f().s("#FF00FF").ss(0.9,1,1).p("AADnUIgFOp");
+	this.shape_74.setTransform(718.6,816.9);
+
+	this.shape_75 = new cjs.Shape();
+	this.shape_75.graphics.f().s("#000099").ss(0.9,1,1).p("EAbzhDSUgJoAuHgdPAZGQjbC6jrCpQjYCcjnCLQhUAzhVAwUArmAZ1gIAAZ2");
+	this.shape_75.setTransform(508.1,433.1);
+
 	this.shape_76 = new cjs.Shape();
-	this.shape_76.graphics.f().s("#FF00FF").ss(0.9,1,1).p("AADnUIgFOp");
-	this.shape_76.setTransform(718.6,816.9);
+	this.shape_76.graphics.f().s("#000033").ss(0.9,1,1).p("EAMfhDeMAALBR7IgCGUMgAJAgFEgMoBDfIZBAA");
+	this.shape_76.setTransform(639.1,431.9);
 
 	this.shape_77 = new cjs.Shape();
-	this.shape_77.graphics.f().s("#000099").ss(0.9,1,1).p("EAbzhDSUgJoAuHgdPAZGQjbC6jrCpQjYCcjnCLQhUAzhVAwUArmAZ1gIAAZ2");
-	this.shape_77.setTransform(508.1,433.1);
+	this.shape_77.graphics.f().s("#000066").ss(0.9,1,1).p("AikAMIFIgX");
+	this.shape_77.setTransform(702.5,1.2);
 
 	this.shape_78 = new cjs.Shape();
-	this.shape_78.graphics.f().s("#000033").ss(0.9,1,1).p("EAMfhDeMAALBR7IgCGUMgAJAgFEgMoBDfIZBAA");
-	this.shape_78.setTransform(639.1,431.9);
+	this.shape_78.graphics.lf(["#0C3F86","#1D3F7C","#32A1CC","#2896BE"],[0,0.243,0.902,1],-194.3,0,194.3,0).s().p("AFPc7UAIAgZ3grlgZ0QBVgwBUgzQDmiLDZibQDWCUDMCSQc1UtPuR3IgFOqg");
+	this.shape_78.setTransform(524.6,678.8);
 
 	this.shape_79 = new cjs.Shape();
-	this.shape_79.graphics.f().s("#000066").ss(0.9,1,1).p("AikAMIFIgX");
-	this.shape_79.setTransform(702.5,1.2);
+	this.shape_79.graphics.lf(["#005088","#004678","#32A1CC","#2896BE"],[0,0.071,0.859,1],-164.1,0,164,0).s().p("AzGVmQjLiTjXiUQDripDbi7UAdPgZFAJoguIIFJgXMAALBR7IgCGUMgAJAgEQvux3820tg");
+	this.shape_79.setTransform(555.9,385);
 
-	this.shape_80 = new cjs.Shape();
-	this.shape_80.graphics.lf(["#0C3F86","#1D3F7C","#32A1CC","#2896BE"],[0,0.243,0.902,1],-194.3,0,194.3,0).s().p("AFPc7UAIAgZ3grlgZ0QBVgwBUgzQDmiLDZibQDWCUDMCSQc1UtPuR3IgFOqg");
-	this.shape_80.setTransform(524.6,678.8);
-
-	this.shape_81 = new cjs.Shape();
-	this.shape_81.graphics.lf(["#005088","#004678","#32A1CC","#2896BE"],[0,0.071,0.859,1],-164.1,0,164,0).s().p("AzGVmQjLiTjXiUQDripDbi7UAdPgZFAJoguIIFJgXMAALBR7IgCGUMgAJAgEQvux3820tg");
-	this.shape_81.setTransform(555.9,385);
-
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_81},{t:this.shape_80},{t:this.shape_79},{t:this.shape_78},{t:this.shape_77},{t:this.shape_76}]}).to({state:[{t:this.shape_81},{t:this.shape_80},{t:this.shape_79},{t:this.shape_78},{t:this.shape_77},{t:this.shape_76}]},571).wait(1));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_79},{t:this.shape_78},{t:this.shape_77},{t:this.shape_76},{t:this.shape_75},{t:this.shape_74}]}).to({state:[{t:this.shape_79},{t:this.shape_78},{t:this.shape_77},{t:this.shape_76},{t:this.shape_75},{t:this.shape_74}]},571).wait(1));
 
 	// Cortinaizquierda
+	this.shape_80 = new cjs.Shape();
+	this.shape_80.graphics.f().s("#000033").ss(1,1,1).p("Avbf8UAXZgYYAHfgnf");
+	this.shape_80.setTransform(587.7,207.1);
+
+	this.shape_81 = new cjs.Shape();
+	this.shape_81.graphics.f().s("#000033").ss(0.1,1,1).p("Eg1XAn5UAoBAAcAbxgW7UAYFgT3AO4glc");
+	this.shape_81.setTransform(344.9,258.2);
+
 	this.shape_82 = new cjs.Shape();
-	this.shape_82.graphics.f().s("#000033").ss(1,1,1).p("Avbf8UAXZgYYAHfgnf");
-	this.shape_82.setTransform(587.7,207.1);
+	this.shape_82.graphics.f().s("#000066").ss(1,1,1).p("Egl7gCHIAAKFIAAKHQBzgTBwgUQATgEASgDQBBgMBBgMQAXgEAWgFQA+gMA+gNQAVgEAWgGQZblaTBrfQHbkgGdlbQEQjlD1j+");
+	this.shape_82.setTransform(246.1,527.1);
 
 	this.shape_83 = new cjs.Shape();
-	this.shape_83.graphics.f().s("#000033").ss(0.1,1,1).p("Eg1XAn5UAoBAAcAbxgW7UAYFgT3AO4glc");
-	this.shape_83.setTransform(344.9,258.2);
+	this.shape_83.graphics.lf(["#0C3F86","#32A1CC","#2896BE"],[0,0.902,1],-242.7,0,242.7,0).s().p("Egl6AH+QVghCUcniQNIk3MunhQECibEBirQj0D+kPDlQmeFbnbEgQzBLf5aFaIgsAKIh8AZIgtAJIiCAYIglAHQhwAUhyATg");
+	this.shape_83.setTransform(246.1,527.1);
 
 	this.shape_84 = new cjs.Shape();
-	this.shape_84.graphics.f().s("#000066").ss(1,1,1).p("Egl7gCHIAAKFIAAKHQBzgTBwgUQATgEASgDQBBgMBBgMQAXgEAWgFQA+gMA+gNQAVgEAWgGQZblaTBrfQHbkgGdlbQEQjlD1j+");
-	this.shape_84.setTransform(246.1,527.1);
+	this.shape_84.graphics.lf(["#005088","#004678","#32A1CC","#2896BE"],[0,0.071,0.859,1],-341.6,0,341.6,0).s().p("Eg1XAi3UAoBAAcAbxgW8UAYFgT3AO4glcUgHfAnfgXaAYXQkBCrkDCaQstHitHE2Q0eHk1gBCg");
+	this.shape_84.setTransform(344.9,290.5);
 
-	this.shape_85 = new cjs.Shape();
-	this.shape_85.graphics.lf(["#0C3F86","#32A1CC","#2896BE"],[0,0.902,1],-242.7,0,242.7,0).s().p("Egl6AH+QVghCUcniQNIk3MunhQECibEBirQj0D+kPDlQmeFbnbEgQzBLf5aFaIgsAKIh8AZIgtAJIiCAYIglAHQhwAUhyATg");
-	this.shape_85.setTransform(246.1,527.1);
-
-	this.shape_86 = new cjs.Shape();
-	this.shape_86.graphics.lf(["#005088","#004678","#32A1CC","#2896BE"],[0,0.071,0.859,1],-341.6,0,341.6,0).s().p("Eg1XAi3UAoBAAcAbxgW8UAYFgT3AO4glcUgHfAnfgXaAYXQkBCrkDCaQstHitHE2Q0eHk1gBCg");
-	this.shape_86.setTransform(344.9,290.5);
-
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_86},{t:this.shape_85},{t:this.shape_84},{t:this.shape_83},{t:this.shape_82}]}).to({state:[{t:this.shape_86},{t:this.shape_85},{t:this.shape_84},{t:this.shape_83},{t:this.shape_82}]},571).wait(1));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_84},{t:this.shape_83},{t:this.shape_82},{t:this.shape_81},{t:this.shape_80}]}).to({state:[{t:this.shape_84},{t:this.shape_83},{t:this.shape_82},{t:this.shape_81},{t:this.shape_80}]},571).wait(1));
 
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(362.3,429,718.7,865.8);
@@ -25405,13 +25386,14 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/revista_atlas_.png?1555467595860", id:"revista_atlas_"},
-		{src:"sounds/hc2.mp3?1555467605085", id:"hc2"},
-		{src:"sounds/hh2.mp3?1555467605085", id:"hh2"},
-		{src:"sounds/inicio.mp3?1555467605085", id:"inicio"},
-		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1555467605085", id:"lib/jquery-2.2.4.min.js"},
-		{src:"components/sdk/anwidget.js?1555467605085", id:"sdk/anwidget.js"},
-		{src:"components/mycomponents/src/myyoutube.js?1555467605085", id:"my.youtube"}
+		{src:"images/revista_atlas_.png?1555470630647", id:"revista_atlas_"},
+		{src:"sounds/hc2.mp3?1555470638007", id:"hc2"},
+		{src:"sounds/hh2.mp3?1555470638007", id:"hh2"},
+		{src:"sounds/inicio.mp3?1555470638007", id:"inicio"},
+		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1555470638007", id:"lib/jquery-2.2.4.min.js"},
+		{src:"components/sdk/anwidget.js?1555470638007", id:"sdk/anwidget.js"},
+		{src:"components/video/src/video.js?1555470638007", id:"an.Video"},
+		{src:"components/mycomponents/src/myyoutube.js?1555470638007", id:"my.youtube"}
 	],
 	preloads: []
 };
